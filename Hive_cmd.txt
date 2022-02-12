@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS emp;
+
+DESCRIBE DATABASE EXTENDED emp;
+
+DESCRIBE DATABASE emp;
+
+CREATE TABLE IF NOT EXISTS emp.employee (
+ id int,
+ name string,
+ age int,
+ gender string )
+ COMMENT 'Employee Table'
+ ROW FORMAT DELIMITED
+ FIELDS TERMINATED BY ',';
+
+SHOW TABLES; // This shows all tables from the current database
+SHOW TABLES in emp; // This shows all tables in the emp database
+
+
+DESCRIBE FORMATTED employee;
+DESCRIBE EXTENDED employee;
+
+
+TRUNCATE TABLE emp;
+
+
+ALTER TABLE employee RENAME TO employee2;
+
+
+DROP TABLE employee2;
+DROP TABLE emp.employee2;
+DROP TABLE IF EXISTS employee2 PURGE;
