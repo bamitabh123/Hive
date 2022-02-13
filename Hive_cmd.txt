@@ -30,3 +30,4 @@ ALTER TABLE employee RENAME TO employee2;
 DROP TABLE employee2;
 DROP TABLE emp.employee2;
 DROP TABLE IF EXISTS employee2 PURGE;
+

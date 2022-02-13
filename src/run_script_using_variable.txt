@@ -1,0 +1,4 @@
+hive --hivevar database=emp --hivevar name="Mari" --hivevar age=30 -f /home/hadoop/git/Hive/sql/create_table.sql
+
+#run a hive query from the command line
+hive -e "select * from emp.employee;"

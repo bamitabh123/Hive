@@ -1,1 +1,4 @@
 https://www.revisitclass.com/category/hadoop/
+https://sparkbyexamples.com/apache-hive/
+#Hive Documentation
+https://cwiki.apache.org/confluence/display/hive/

@@ -1,0 +1,10 @@
+Question:
+Are there any performance improvements to be gained from using MSCK in Hive over ALTER TABLE RECOVER PARTITIONS natively in ODAS?
+Answer:
+`Alter table recover partitions` is effectively an alias for `msck repair table`.
+The primary difference in usability is that `alter table recover partitions` works from dbcli or directly ODAS through the REST API. The `msck repair table` command must be run from Hive. Hive then translates the `msck` call to `Alter table add partition` and distributes it to the planner as a call to each partition.
+The overhead of this translation and distribution results in slower performance from Hive vs. natively through ODAS.
+
+In Summary:
+1) 'alter table recover partitions' is the lower overhead, ODAS native version of Hive's `msck repair`.
+2) There will be a slight performance decrease in using `msck repair table` vs `Alter table recover partitions` due to the overhead of sending a call from Hive to ODAS, rather than directly to ODAS.
